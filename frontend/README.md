@@ -1,18 +1,59 @@
-# React + Vite
+# Front-end AV1 DSW
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação React que consome a API de tarefas em Node.js + Express + Prisma + MySQL.
 
-Currently, two official plugins are available:
+## Executar o projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. Instale as dependências:
 
-## React Compiler
+```bash
+cd frontend
+npm install
+```
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+2. Inicie o servidor de desenvolvimento:
 
-Note: This will impact Vite dev & build performances.
+```bash
+npm run dev
+```
 
-## Expanding the ESLint configuration
+3. Abra o endereço exibido pelo Vite (normalmente `http://localhost:5173`).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+> O backend deve estar rodando em `http://localhost:3000` para que o front-end funcione.
+
+## Estrutura principal
+
+- `src/App.jsx` - entrada principal do React
+- `src/pages/HomePage.jsx` - página principal do projeto
+- `src/components/TaskForm.jsx` - formulário de tarefas
+- `src/components/TaskList.jsx` - listagem de tarefas
+- `src/services/taskService.js` - chamadas à API
+
+## API utilizada
+
+O front-end consome as rotas:
+
+- `GET /tasks`
+- `POST /tasks`
+- `PUT /tasks/:id`
+- `DELETE /tasks/:id`
+
+## Variáveis de ambiente
+
+- `frontend/.env` contém a URL da API:
+
+```env
+VITE_API_URL=http://localhost:3000
+```
+
+## Tecnologias
+
+- React
+- Vite
+- Tailwind CSS
+- JavaScript
+
+## Observações
+
+- Inicie o backend antes do frontend.
+- Se a API estiver em outra porta, atualize `frontend/.env`.
